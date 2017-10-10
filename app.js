@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
+var messageRoutes = require('./routes/messages');
 
 var app = express();
 mongoose.connect('mongodb://root:root@ds113935.mlab.com:13935/node-angular', {
@@ -33,6 +34,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', appRoutes);
+app.use('/message', messageRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
