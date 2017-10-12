@@ -16,6 +16,7 @@ import { MessageService } from './messages/message.service';
 import { routing } from "./app.routing";
 import { SigninComponent } from "./auth/signin.component";
 import { SignupComponent } from "./auth/signup.component";
+import { AuthService } from "./auth/auth.service";
 
 @NgModule({
     declarations: [
@@ -37,7 +38,7 @@ import { SignupComponent } from "./auth/signup.component";
         ReactiveFormsModule,
         HttpModule
     ],
-    providers: [MessageService],
+    providers: [MessageService, AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
